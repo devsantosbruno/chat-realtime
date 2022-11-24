@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Button, Input } from "@material-tailwind/react";
+import { User } from "phosphor-react";
 import { useChannelContext } from "../hooks/useChannelContext";
 
 const styles = {
-  input: "text-white",
+  field: "bg-[#323644] rounded-xl flex flex-col pl-5 pr-10 py-2 relative",
+  label: "text-[11px] text-[#9c9da2] text-start",
+  input: "text-white text-sm bg-transparent border-none outline-none",
+  icon: "absolute right-3 top-0 bottom-0 grid place-content-center",
 };
 
 export const Login = () => {
@@ -17,7 +20,7 @@ export const Login = () => {
     <div className="min-h-screen bg-loginHouse bg-cover bg-no-repeat flex items-center justify-center">
       <div className="container mx-auto px-4">
         <div className="text-white text-center max-w-md">
-          <h1 className="font-bold text-5xl mb-10">Login</h1>
+          <h1 className="font-bold text-5xl mb-14">Login</h1>
 
           <form
             onSubmit={(event) => {
@@ -28,45 +31,78 @@ export const Login = () => {
           >
             <div className="flex flex-col gap-4">
               <div className="grid grid-cols-2 gap-8">
-                <Input
-                  size="lg"
-                  className={styles.input}
-                  label="First name"
-                  type="text"
-                  // value={userName}
-                  // onChange={(ev) => setUserName(ev.target.value)}
-                />
-                <Input
-                  size="lg"
-                  className={styles.input}
-                  label="Last name"
-                  type="text"
-                  // value={userName}
-                  // onChange={(ev) => setUserName(ev.target.value)}
-                />
+                <div className={styles.field}>
+                  <label htmlFor="firstName" className={styles.label}>
+                    First name
+                  </label>
+                  <input
+                    className={styles.input}
+                    type="text"
+                    id="firstName"
+                    // value={userName}
+                    // onChange={(ev) => setUserName(ev.target.value)}
+                  />
+                  <div className={styles.icon}>
+                    <User size={18} color="white" />
+                  </div>
+                </div>
+
+                <div className={styles.field}>
+                  <label htmlFor="lastName" className={styles.label}>
+                    Last name
+                  </label>
+                  <input
+                    className={styles.input}
+                    type="text"
+                    id="lastName"
+                    // value={userName}
+                    // onChange={(ev) => setUserName(ev.target.value)}
+                  />
+                  <div className={styles.icon}>
+                    <User size={18} color="white" />
+                  </div>
+                </div>
               </div>
 
-              <Input
-                size="lg"
-                className={styles.input}
-                label="Email"
-                type="email"
-                // value={userName}
-                // onChange={(ev) => setUserName(ev.target.value)}
-              />
-              <Input
-                size="lg"
-                className={styles.input}
-                label="Password"
-                type="password"
-                // value={userName}
-                // onChange={(ev) => setUserName(ev.target.value)}
-              />
+              <div className={styles.field}>
+                <label htmlFor="email" className={styles.label}>
+                  Email
+                </label>
+                <input
+                  className={styles.input}
+                  type="text"
+                  id="email"
+                  // value={userName}
+                  // onChange={(ev) => setUserName(ev.target.value)}
+                />
+                <div className={styles.icon}>
+                  <User size={18} color="white" />
+                </div>
+              </div>
+
+              <div className={styles.field}>
+                <label htmlFor="password" className={styles.label}>
+                  Password
+                </label>
+                <input
+                  className={styles.input}
+                  type="password"
+                  id="password"
+                  // value={userName}
+                  // onChange={(ev) => setUserName(ev.target.value)}
+                />
+                <div className={styles.icon}>
+                  <User size={18} color="white" />
+                </div>
+              </div>
             </div>
 
-            <Button type="submit" className="rounded-full px-20 mt-6">
+            <button
+              type="submit"
+              className="bg-[#5195ea] rounded-full py-2 px-20 mt-8"
+            >
               Login
-            </Button>
+            </button>
           </form>
         </div>
       </div>
