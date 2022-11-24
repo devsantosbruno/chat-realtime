@@ -10,7 +10,7 @@ export const Login = () => {
 
   return (
     <div>
-      <h1>Login</h1>
+      <h1 className="text-violet-700 bg-slate-500">Login</h1>
 
       <form
         onSubmit={(event) => {
