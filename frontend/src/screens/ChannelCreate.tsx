@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { MenuDesktop } from "../components/menuDesktop";
+import { MenuMobile } from "../components/MenuMobile";
 
-import { NavbarTop } from "../components/NavbarTop";
 import { useChannelContext } from "../hooks/useChannelContext";
 
 export const ChannelCreate = () => {
@@ -18,29 +19,33 @@ export const ChannelCreate = () => {
   });
 
   return (
-    <div className="container px-4 mx-auto">
-      <NavbarTop />
+    <>
+      <MenuDesktop />
 
-      <form
-        onSubmit={(event) => {
-          event.preventDefault();
-          createChannel(channelName);
-          setChannelName("");
-        }}
-      >
-        <label htmlFor="" className="text-violet-600">
-          Nome do canal
-        </label>
-        <input
-          type="text"
-          name=""
-          id=""
-          value={channelName}
-          onChange={(ev) => setChannelName(ev.target.value)}
-        />
+      <div className="container px-4 mx-auto">
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+            createChannel(channelName);
+            setChannelName("");
+          }}
+        >
+          <label htmlFor="" className="text-violet-600">
+            Nome do canal
+          </label>
+          <input
+            type="text"
+            name=""
+            id=""
+            value={channelName}
+            onChange={(ev) => setChannelName(ev.target.value)}
+          />
 
-        <button type="submit">Criar</button>
-      </form>
-    </div>
+          <button type="submit">Criar</button>
+        </form>
+      </div>
+
+      <MenuMobile />
+    </>
   );
 };

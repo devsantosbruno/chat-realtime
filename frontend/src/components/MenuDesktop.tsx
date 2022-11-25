@@ -1,7 +1,7 @@
 import { Moon, SunDim } from "phosphor-react";
 import { useEffect, useState } from "react";
 
-export function NavbarTop() {
+export function MenuDesktop() {
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme")
       ? localStorage.getItem("theme")
