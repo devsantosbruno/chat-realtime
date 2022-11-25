@@ -5,7 +5,7 @@ export function MenuMobile() {
   const navigate = useNavigate();
 
   return (
-    <div className="lg:hidden fixed bottom-0 left-0 right-0 dark:bg-[#181920e0] rounded-t-3xl backdrop-blur-xl">
+    <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-[#ffffffee] dark:bg-[#181920e0] rounded-t-3xl backdrop-blur-xl">
       <div className="container px-4 mx-auto">
         <div className="flex items-center justify-evenly py-4">
           <button
@@ -17,9 +17,14 @@ export function MenuMobile() {
 
           <button
             className="p-3 rounded-2xl"
-            onClick={() => navigate("/login")}
+            onClick={() => navigate("/settings")}
           >
-            <Gear size={25} color="white" />
+            <Gear
+              size={25}
+              color={`${
+                localStorage.getItem("theme") === "dark" ? "white" : "black"
+              }`}
+            />
           </button>
         </div>
       </div>

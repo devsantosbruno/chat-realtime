@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Settings } from "./components/Settings";
 
 import { ChannelCreate } from "./screens/ChannelCreate";
 import { ChannelList } from "./screens/ChannelList";
@@ -13,18 +14,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />
-
           <Route path="/chat/:channelId" element={<Chat />} />
-
-          <Route
-            path="/channels"
-            element={
-              <>
-                <ChannelCreate />
-                <ChannelList />
-              </>
-            }
-          />
+          <Route path="/channels" element={<ChannelList />} />
+          <Route path="/newChannel" element={<ChannelCreate />} />
+          <Route path="/settings" element={<Settings />} />
         </Routes>
       </BrowserRouter>
     </div>
