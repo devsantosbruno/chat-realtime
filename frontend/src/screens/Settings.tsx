@@ -1,8 +1,8 @@
 import { SignOut } from "phosphor-react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { MenuMobile } from "./MenuMobile";
-import { NavbarMobile } from "./NavbarMobile";
+import { MenuMobile } from "../components/MenuMobile";
+import { NavbarMobile } from "../components/NavbarMobile";
 
 export function Settings() {
   const navigate = useNavigate();

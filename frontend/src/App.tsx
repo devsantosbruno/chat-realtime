@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Settings } from "./components/Settings";
 
 import { ChannelCreate } from "./screens/ChannelCreate";
 import { ChannelList } from "./screens/ChannelList";
 import { Chat } from "./screens/Chat";
 import { Login } from "./screens/Login";
+import { Settings } from "./screens/Settings";
 
 import "./styles/main.css";
 
