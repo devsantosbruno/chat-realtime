@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { NavbarTop } from "../components/NavbarTop";
 import { useChannelContext } from "../hooks/useChannelContext";
 
 export const ChannelCreate = () => {
   const [channelName, setChannelName] = useState("");
-  const { createChannel, userName } = useChannelContext();
+  const { createChannel } = useChannelContext();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!userName) {
+    if (!localStorage.getItem("user")) {
       navigate("/login");
 
       return;
@@ -17,7 +18,9 @@ export const ChannelCreate = () => {
   });
 
   return (
-    <div>
+    <div className="container px-4 mx-auto">
+      <NavbarTop />
+
       <form
         onSubmit={(event) => {
           event.preventDefault();
@@ -25,7 +28,9 @@ export const ChannelCreate = () => {
           setChannelName("");
         }}
       >
-        <label htmlFor="">Nome do canal</label>
+        <label htmlFor="" className="text-violet-600">
+          Nome do canal
+        </label>
         <input
           type="text"
           name=""

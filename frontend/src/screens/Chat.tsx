@@ -26,7 +26,7 @@ export const Chat = () => {
       return;
     }
 
-    if (!userName) {
+    if (!localStorage.getItem("user")) {
       navigate("/login");
 
       return;
@@ -37,13 +37,7 @@ export const Chat = () => {
 
   return (
     <div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
+      <div className="flex items-center justify-between">
         <h5># {channel?.name}</h5>
         <Link to="/channels">Voltar</Link>
       </div>
