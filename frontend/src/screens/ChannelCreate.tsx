@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { MenuDesktop } from "../components/menuDesktop";
+
 import { MenuMobile } from "../components/MenuMobile";
 import { NavbarMobile } from "../components/NavbarMobile";
 
@@ -21,11 +21,11 @@ export const ChannelCreate = () => {
 
   return (
     <div className="min-h-screen bg-[#20232B]">
-      <MenuDesktop />
       <NavbarMobile />
 
       <div className="container px-4 mx-auto">
-        <form
+        {/* <form
+          className="text-center"
           onSubmit={(event) => {
             event.preventDefault();
             createChannel(channelName);
@@ -33,19 +33,33 @@ export const ChannelCreate = () => {
             navigate("/channels");
           }}
         >
-          <label htmlFor="" className="text-violet-600">
-            Nome do canal
-          </label>
-          <input
-            type="text"
-            name=""
-            id=""
-            value={channelName}
-            onChange={(ev) => setChannelName(ev.target.value)}
-          />
+          <label
+            htmlFor="search"
+            className="bg-[#16171B] rounded-xl flex flex-col justify-center pl-10 pr-5 relative"
+          >
+            <div className="absolute left-3">
+              <ChatCircleDots size={22} color="white" />
+            </div>
 
-          <button type="submit">Criar</button>
-        </form>
+            <input
+              className="text-white bg-transparent border-none outline-none py-4"
+              type="text"
+              id="search"
+              placeholder="Technology"
+              value={channelName}
+              onChange={(ev) => setChannelName(ev.target.value)}
+              autoComplete="off"
+              required
+            />
+          </label>
+
+          <button
+            type="submit"
+            className="bg-[#5195ea] text-white rounded-full py-2 px-20 mt-8 hover:bg-[#59a4ff] hover:shadow-lg hover:shadow-white/20 transition duration-300"
+          >
+            Create
+          </button>
+        </form> */}
       </div>
 
       <MenuMobile />
