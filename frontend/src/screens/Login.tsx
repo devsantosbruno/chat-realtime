@@ -45,7 +45,7 @@ export const Login = () => {
             }}
           >
             <div className="flex flex-col gap-4">
-              <div className="grid sm:grid-cols-2 gap-4 sm:gap-8">
+              <div className="grid min-[410px]:grid-cols-2 gap-4 min-[410px]:gap-8">
                 <label htmlFor="firstName" className={styles.field}>
                   <label htmlFor="firstName" className={styles.label}>
                     First name

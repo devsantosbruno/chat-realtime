@@ -38,7 +38,7 @@ export function Settings() {
 
   return (
     <div className="min-h-screen bg-[#f5f5f5] dark:bg-[#20232B] pt-8">
-      <div className="text-center">
+      <div className="text-center px-4">
         <h2 className="text-2xl font-light text-[#20232B] dark:text-white">
           {userName}
         </h2>
