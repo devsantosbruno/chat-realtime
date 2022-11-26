@@ -98,6 +98,7 @@ export const Chat = () => {
                   onChange={(ev) => {
                     setMessage(ev.target.value);
                   }}
+                  autoComplete="off"
                   required
                 />
                 <button
