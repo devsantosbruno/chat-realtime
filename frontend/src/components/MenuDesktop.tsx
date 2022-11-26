@@ -23,7 +23,7 @@ export function MenuDesktop() {
   }, [darkMode]);
 
   return (
-    <div className="bg-white dark:bg-[#20232B]">
+    <div className="bg-[#ffffffee] dark:bg-[#20232B]">
       <button
         type="button"
         onClick={() => setDarkMode(!darkMode)}

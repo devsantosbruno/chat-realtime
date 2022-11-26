@@ -20,14 +20,17 @@ export function NavbarMobile() {
       <div className="container px-4 mx-auto">
         <label
           htmlFor="search"
-          className="bg-[#16171B] rounded-xl flex flex-col justify-center pl-10 pr-5 relative"
+          className="bg-white shadow dark:bg-[#16171B] rounded-xl flex flex-col justify-center pl-10 pr-5 relative"
         >
           <div className="absolute left-3">
-            <MagnifyingGlass size={22} color="white" />
+            <MagnifyingGlass
+              size={22}
+              className="text-[#121212] dark:text-white"
+            />
           </div>
 
           <input
-            className="text-white bg-transparent border-none outline-none py-4"
+            className="text-[#121212] dark:text-white bg-transparent border-none outline-none py-4"
             type="text"
             id="search"
             placeholder="Search"
@@ -41,7 +44,7 @@ export function NavbarMobile() {
             <div className="grid grid-cols-2 items-center justify-evenly gap-6 mb-3">
               <button
                 type="button"
-                className="px-4 py-2 mt-4 bg-[#F2FB88] rounded-xl flex items-center justify-center gap-1"
+                className="px-4 py-2 mt-4 bg-white dark:bg-[#F2FB88] shadow text-[#121212] rounded-xl flex items-center justify-center gap-1"
                 onClick={() => navigate("/channels")}
               >
                 <ChatsCircle size={22} className="mr-2" />
@@ -52,7 +55,7 @@ export function NavbarMobile() {
               </button>
 
               <Accordion.Header>
-                <Accordion.Trigger className="w-full px-4 py-2 mt-4 bg-[#F2FB88] rounded-xl flex items-center justify-center gap-1">
+                <Accordion.Trigger className="w-full px-4 py-2 mt-4 bg-white dark:bg-[#F2FB88] shadow text-[#121212] rounded-xl flex items-center justify-center gap-1">
                   <PlusCircle size={22} />
                   Create a channel
                 </Accordion.Trigger>
@@ -69,14 +72,17 @@ export function NavbarMobile() {
               >
                 <label
                   htmlFor="search"
-                  className="bg-[#16171B] rounded-xl flex flex-col justify-center pl-10 pr-5 relative"
+                  className="bg-white shadow dark:bg-[#16171B] rounded-xl flex flex-col justify-center pl-10 pr-5 relative"
                 >
                   <div className="absolute left-3">
-                    <ChatCircleDots size={22} color="white" />
+                    <ChatCircleDots
+                      size={22}
+                      className="text-[#121212] dark:text-white"
+                    />
                   </div>
 
                   <input
-                    className="text-white bg-transparent border-none outline-none py-4"
+                    className="text-[#121212] dark:text-white bg-transparent border-none outline-none py-4"
                     type="text"
                     id="search"
                     placeholder="Technology"

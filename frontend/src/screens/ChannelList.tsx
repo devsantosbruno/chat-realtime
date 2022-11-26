@@ -17,7 +17,7 @@ export const ChannelList = () => {
   }, []);
 
   return (
-    <div className="min-h-screen dark:bg-[#20232B]">
+    <div className="min-h-screen bg-[#f5f5f5] dark:bg-[#20232B]">
       <NavbarMobile />
 
       <div className="container px-4 mx-auto mt-4">

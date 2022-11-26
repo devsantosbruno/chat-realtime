@@ -37,9 +37,11 @@ export function Settings() {
   }, [darkMode]);
 
   return (
-    <div className="min-h-screen bg-[#20232B] pt-8">
+    <div className="min-h-screen bg-[#f5f5f5] dark:bg-[#20232B] pt-8">
       <div className="text-center">
-        <h2 className="text-2xl font-light text-white">{userName}</h2>
+        <h2 className="text-2xl font-light text-[#20232B] dark:text-white">
+          {userName}
+        </h2>
       </div>
 
       <div className="container px-4 mx-auto pt-20">
