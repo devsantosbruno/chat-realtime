@@ -15,7 +15,7 @@ export function NavbarMobile() {
   const { createChannel, channels } = useChannelContext();
 
   return (
-    <div className="lg:hidden sticky top-0 left-0 right-0 pt-12 pb-4 rounded-t-3xl dark:backdrop-blur-xl">
+    <div className="lg:hidden sticky top-0 left-0 right-0 pt-12 pb-4 rounded-b-3xl dark:bg-[#20232B] shadow">
       <div className="container px-4 mx-auto">
         <label
           htmlFor="search"
