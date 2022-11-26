@@ -28,7 +28,7 @@ export const Chat = () => {
   useEffect(() => {
     window.scrollTo(0, document.body.scrollHeight);
   }, [channel?.messages]);
-  console.log(channel?.messages.length);
+
   return (
     <div className="min-h-screen bg-[#20232B]">
       <div className="container min-h-screen flex flex-col pb-24 justify-between px-4 mx-auto text-white">
@@ -42,7 +42,7 @@ export const Chat = () => {
           <span className="w-[22px]"></span>
         </div>
 
-        <div className="overflow-auto flex flex-col gap-5 pt-20">
+        <div className="overflow-auto flex flex-col gap-5 pt-24">
           {channel?.messages.length !== 0 &&
           channel?.messages.length !== undefined ? (
             channel?.messages.map((message, index) => (

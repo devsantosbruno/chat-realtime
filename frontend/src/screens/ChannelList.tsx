@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { MenuMobile } from "../components/MenuMobile";
 import { NavbarMobile } from "../components/NavbarMobile";
@@ -7,11 +8,19 @@ export const ChannelList = () => {
   const { channels } = useChannelContext();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (!localStorage.getItem("user")) {
+      navigate("/login");
+
+      return;
+    }
+  }, []);
+
   return (
     <div className="min-h-screen dark:bg-[#20232B]">
       <NavbarMobile />
 
-      <div className="container px-4 mx-auto">
+      <div className="container px-4 mx-auto mt-4">
         {channels.length > 0 ? (
           <div className="flex flex-col gap-3">
             {channels.map((channel) => (
