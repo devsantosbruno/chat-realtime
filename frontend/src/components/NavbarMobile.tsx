@@ -12,7 +12,7 @@ import { useChannelContext } from "../hooks/useChannelContext";
 
 export function NavbarMobile() {
   const [channelName, setChannelName] = useState("");
-  const { createChannel } = useChannelContext();
+  const { createChannel, channels } = useChannelContext();
   const navigate = useNavigate();
 
   return (
@@ -31,8 +31,6 @@ export function NavbarMobile() {
             type="text"
             id="search"
             placeholder="Search"
-            // value={email}
-            // onChange={(ev) => setEmail(ev.target.value)}
             autoComplete="off"
             required
           />
@@ -49,7 +47,7 @@ export function NavbarMobile() {
                 <ChatsCircle size={22} className="mr-2" />
                 All
                 <span className="bg-[#5650C8] text-white rounded-full text-[0.75em] min-w-[1.75em] min-h-[1.75em] flex items-center justify-center">
-                  35
+                  {channels.length}
                 </span>
               </button>
 
@@ -67,8 +65,6 @@ export function NavbarMobile() {
                   event.preventDefault();
                   createChannel(channelName);
                   setChannelName("");
-                  console.log(event);
-                  // navigate(`/chat/${channel.id}`)
                 }}
               >
                 <label
@@ -94,17 +90,6 @@ export function NavbarMobile() {
             </Accordion.Content>
           </Accordion.Item>
         </Accordion.Root>
-        {/* <Accordion.Root type="single" defaultValue="item-1" collapsible>
-          <Accordion.Item value="item-1">
-            <Accordion.Header>
-              <Accordion.Trigger>Is it accessible?</Accordion.Trigger>
-            </Accordion.Header>
-
-            <Accordion.Content>
-              Yes. It adheres to the WAI-ARIA design pattern.
-            </Accordion.Content>
-          </Accordion.Item>
-        </Accordion.Root> */}
       </div>
     </div>
   );

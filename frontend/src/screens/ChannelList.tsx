@@ -22,7 +22,6 @@ export const ChannelList = () => {
                 onClick={() => navigate(`/chat/${channel.id}`)}
               >
                 {channel.name}
-                {/* <Link to={`/chat/${channel.id}`}>{channel.name}</Link> */}
               </button>
             ))}
           </div>
