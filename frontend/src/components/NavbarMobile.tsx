@@ -10,7 +10,7 @@ import * as Accordion from "@radix-ui/react-accordion";
 import { useState } from "react";
 import { useChannelContext } from "../hooks/useChannelContext";
 
-export function NavbarMobile() {
+export function NavbarMobile(props: any) {
   const [channelName, setChannelName] = useState("");
   const { createChannel, channels } = useChannelContext();
 
@@ -32,8 +32,11 @@ export function NavbarMobile() {
             className="text-[#121212] dark:text-white bg-transparent border-none outline-none py-4"
             type="text"
             id="search"
-            placeholder="Search"
+            value={props.teste}
             autoComplete="off"
+            onChange={(event) => {
+              props.onChangeFilterText(event.target.value);
+            }}
             required
           />
         </label>
