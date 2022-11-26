@@ -18,6 +18,7 @@ export const Login = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+
   const navigate = useNavigate();
   const { login } = useChannelContext();
 

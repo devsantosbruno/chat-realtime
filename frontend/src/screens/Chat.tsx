@@ -6,6 +6,7 @@ import { useChannelContext } from "../hooks/useChannelContext";
 
 export const Chat = () => {
   const [message, setMessage] = useState("");
+
   const { channel, joinChannel, createMessage, userName } = useChannelContext();
   const { channelId } = useParams<{ channelId: string }>();
   const navigate = useNavigate();

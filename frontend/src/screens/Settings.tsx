@@ -1,6 +1,6 @@
 import { Moon, SignOut } from "phosphor-react";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { MenuMobile } from "../components/MenuMobile";
 import { useChannelContext } from "../hooks/useChannelContext";
 
@@ -55,17 +55,16 @@ export function Settings() {
             Dark Mode
           </button>
 
-          <button
-            type="button"
+          <NavLink
             className="bg-violet-500 text-white flex items-center gap-3 px-4 font-light text-lg w-full min-h-[60px] rounded-xl"
             onClick={() => {
               localStorage.removeItem("user");
-              navigate("/login");
             }}
+            to="/login"
           >
             <SignOut size={22} />
             Log out
-          </button>
+          </NavLink>
         </div>
       </div>
 

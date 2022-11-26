@@ -1,9 +1,7 @@
 import { Chats, Gear } from "phosphor-react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export function MenuMobile() {
-  const navigate = useNavigate();
-
   return (
     <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-[#181920e0] rounded-t-3xl backdrop-blur-xl">
       <div className="container px-4 mx-auto">

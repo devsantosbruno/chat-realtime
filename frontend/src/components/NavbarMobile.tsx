@@ -4,7 +4,7 @@ import {
   MagnifyingGlass,
   PlusCircle,
 } from "phosphor-react";
-import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import * as Accordion from "@radix-ui/react-accordion";
 import { useState } from "react";
@@ -13,7 +13,6 @@ import { useChannelContext } from "../hooks/useChannelContext";
 export function NavbarMobile() {
   const [channelName, setChannelName] = useState("");
   const { createChannel, channels } = useChannelContext();
-  const navigate = useNavigate();
 
   return (
     <div className="lg:hidden sticky top-0 left-0 right-0 pt-12 pb-4 rounded-t-3xl dark:backdrop-blur-xl">
@@ -42,17 +41,16 @@ export function NavbarMobile() {
         <Accordion.Root type="single" collapsible>
           <Accordion.Item value="item-1">
             <div className="grid grid-cols-2 items-center justify-evenly gap-6 mb-3">
-              <button
-                type="button"
+              <NavLink
+                to="/channels"
                 className="px-4 py-2 mt-4 bg-white dark:bg-[#F2FB88] shadow text-[#121212] rounded-xl flex items-center justify-center gap-1"
-                onClick={() => navigate("/channels")}
               >
                 <ChatsCircle size={22} className="mr-2" />
                 All
                 <span className="bg-[#5650C8] text-white rounded-full text-[0.75em] min-w-[1.75em] min-h-[1.75em] flex items-center justify-center">
                   {channels.length}
                 </span>
-              </button>
+              </NavLink>
 
               <Accordion.Header>
                 <Accordion.Trigger className="w-full px-4 py-2 mt-4 bg-white dark:bg-[#F2FB88] shadow text-[#121212] rounded-xl flex items-center justify-center gap-1">
