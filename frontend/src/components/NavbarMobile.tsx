@@ -4,10 +4,10 @@ import {
   MagnifyingGlass,
   PlusCircle,
 } from "phosphor-react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import * as Accordion from "@radix-ui/react-accordion";
-import { useState } from "react";
 import { useChannelContext } from "../hooks/useChannelContext";
 
 export function NavbarMobile(props: any) {

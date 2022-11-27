@@ -16,6 +16,7 @@ export function MenuMobile() {
           >
             <Chats size={25} />
           </NavLink>
+
           <NavLink
             to="/settings"
             className={({ isActive }) =>

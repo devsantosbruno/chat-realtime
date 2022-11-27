@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 import { useChannelContext } from "../hooks/useChannelContext";
 
+import { Button } from "../components/Button";
 import { MenuMobile } from "../components/MenuMobile";
 import { NavbarMobile } from "../components/NavbarMobile";
 
@@ -41,13 +42,9 @@ export const ChannelList = () => {
                 }
               })
               .map((channel) => (
-                <NavLink
-                  key={channel.id}
-                  className="bg-violet-500 text-white flex items-center gap-3 px-4 font-light text-lg w-full min-h-[60px] rounded-xl"
-                  to={`/chat/${channel.id}`}
-                >
-                  {channel.name}
-                </NavLink>
+                <Button asChild key={channel.id}>
+                  <NavLink to={`/chat/${channel.id}`}>{channel.name}</NavLink>
+                </Button>
               ))}
           </div>
         ) : (

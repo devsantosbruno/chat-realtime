@@ -1,6 +1,7 @@
 import { Moon, SignOut } from "phosphor-react";
 import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { Button } from "../components/Button";
 import { MenuMobile } from "../components/MenuMobile";
 import { useChannelContext } from "../hooks/useChannelContext";
 
@@ -46,25 +47,22 @@ export function Settings() {
 
       <div className="container px-4 mx-auto pt-20">
         <div className="flex flex-col gap-4">
-          <button
-            type="button"
-            className="bg-violet-500 text-white flex items-center gap-3 px-4 font-light text-lg w-full min-h-[60px] rounded-xl"
-            onClick={() => setDarkMode(!darkMode)}
-          >
+          <Button onClick={() => setDarkMode(!darkMode)}>
             <Moon size={22} />
             Dark Mode
-          </button>
+          </Button>
 
-          <NavLink
-            className="bg-violet-500 text-white flex items-center gap-3 px-4 font-light text-lg w-full min-h-[60px] rounded-xl"
-            onClick={() => {
-              localStorage.removeItem("user");
-            }}
-            to="/login"
-          >
-            <SignOut size={22} />
-            Log out
-          </NavLink>
+          <Button asChild>
+            <NavLink
+              onClick={() => {
+                localStorage.removeItem("user");
+              }}
+              to="/login"
+            >
+              <SignOut size={22} />
+              Log out
+            </NavLink>
+          </Button>
         </div>
       </div>
 
