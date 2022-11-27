@@ -1,6 +1,6 @@
 import { CaretLeft, PaperPlaneTilt } from "phosphor-react";
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { useChannelContext } from "../hooks/useChannelContext";
 
@@ -34,9 +34,9 @@ export const Chat = () => {
     <div className="min-h-screen bg-[#f5f5f5] dark:bg-[#20232B]">
       <div className="container min-h-screen flex flex-col pb-20 justify-between px-4 mx-auto text-white">
         <div className="flex items-center justify-between gap-2 fixed top-0 left-0 right-0 p-4 z-50 bg-[#121212] shadow rounded-b-3xl">
-          <Link to="/channels">
+          <button type="button" onClick={() => navigate(-1)}>
             <CaretLeft size={22} />
-          </Link>
+          </button>
 
           <h5 className="bg-[#F2FB88] text-[#121212] px-8 py-2 rounded-full">
             {channel?.name}
