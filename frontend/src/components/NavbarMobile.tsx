@@ -32,7 +32,6 @@ export function NavbarMobile(props: any) {
             className="text-[#121212] dark:text-white bg-transparent border-none outline-none py-4"
             type="text"
             id="search"
-            value={props.teste}
             autoComplete="off"
             onChange={(event) => {
               props.onChangeFilterText(event.target.value);

@@ -37,9 +37,11 @@ export const Chat = () => {
           <Link to="/channels">
             <CaretLeft size={22} />
           </Link>
+
           <h5 className="bg-[#F2FB88] text-[#121212] px-8 py-2 rounded-full">
             {channel?.name}
           </h5>
+
           <span className="w-[22px]"></span>
         </div>
 
