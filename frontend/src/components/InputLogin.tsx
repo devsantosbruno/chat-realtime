@@ -28,7 +28,6 @@ export function InputLogin(props: InputProps) {
             : undefined
         }
         autoComplete="off"
-        required
       />
 
       <div className="absolute right-3">{props.icon}</div>

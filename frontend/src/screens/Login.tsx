@@ -32,7 +32,6 @@ export const Login = () => {
           <form
             onSubmit={(event) => {
               event.preventDefault();
-              console.log(`${firstName} ${lastName}`);
               login(`${firstName} ${lastName}`);
               localStorage.setItem("user", `${firstName} ${lastName}`);
               navigate("/channels");
