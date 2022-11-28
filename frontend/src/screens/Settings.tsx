@@ -3,11 +3,9 @@ import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "../components/Button";
 import { MenuMobile } from "../components/MenuMobile";
-import { useChannelContext } from "../hooks/useChannelContext";
 
 export function Settings() {
   const navigate = useNavigate();
-  const { userName } = useChannelContext();
 
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme")
@@ -41,7 +39,7 @@ export function Settings() {
     <div className="min-h-screen bg-[#f5f5f5] dark:bg-[#20232B] pt-8">
       <div className="text-center px-4">
         <h2 className="text-2xl font-light text-[#20232B] dark:text-white">
-          {userName}
+          {localStorage.getItem("user")}
         </h2>
       </div>
 
