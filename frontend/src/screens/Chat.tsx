@@ -12,12 +12,6 @@ export const Chat = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!localStorage.getItem("user")) {
-      navigate("/login");
-
-      return;
-    }
-
     if (!channelId) {
       navigate("/home");
       return;

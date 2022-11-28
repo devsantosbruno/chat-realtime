@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 import { useChannelContext } from "../hooks/useChannelContext";
 
@@ -10,15 +10,6 @@ import { NavbarMobile } from "../components/NavbarMobile";
 export const Home = () => {
   const { channels } = useChannelContext();
   const [searchFilter, setSearchFilter] = useState("");
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!localStorage.getItem("user")) {
-      navigate("/login");
-
-      return;
-    }
-  }, []);
 
   function onChangeFilterText(text: string) {
     setSearchFilter(text);

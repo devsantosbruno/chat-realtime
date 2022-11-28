@@ -1,20 +1,9 @@
 import { Moon, SignOut } from "phosphor-react";
-import { useEffect } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Button } from "../components/Button";
 import { MenuMobile } from "../components/MenuMobile";
 
 export function Settings(props: any) {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!localStorage.getItem("user")) {
-      navigate("/login");
-
-      return;
-    }
-  }, []);
-
   return (
     <div className="min-h-screen bg-[#f5f5f5] dark:bg-[#20232B] pt-8">
       <div className="text-center px-4">

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 
 import { Chat } from "./screens/Chat";
 import { Home } from "./screens/Home";
@@ -10,6 +10,15 @@ import { Settings } from "./screens/Settings";
 import "./styles/main.css";
 
 function App() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem("user")) {
+      navigate("/login");
+    }
+  }, []);
+
+  // dark mode
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme")
       ? localStorage.getItem("theme")
@@ -36,18 +45,16 @@ function App() {
 
   return (
     <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/chat/:channelId" element={<Chat />} />
-          <Route path="/home" element={<Home />} />
-          <Route
-            path="/settings"
-            element={<Settings onChangeDarkMode={onChangeDarkMode} />}
-          />
-          <Route path="/participants" element={<Participants />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/chat/:channelId" element={<Chat />} />
+        <Route path="/home" element={<Home />} />
+        <Route
+          path="/settings"
+          element={<Settings onChangeDarkMode={onChangeDarkMode} />}
+        />
+        <Route path="/participants" element={<Participants />} />
+      </Routes>
     </div>
   );
 }
