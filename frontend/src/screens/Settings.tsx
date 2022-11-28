@@ -1,17 +1,11 @@
 import { Moon, SignOut } from "phosphor-react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "../components/Button";
 import { MenuMobile } from "../components/MenuMobile";
 
-export function Settings() {
+export function Settings(props: any) {
   const navigate = useNavigate();
-
-  const [darkMode, setDarkMode] = useState(
-    localStorage.getItem("theme")
-      ? localStorage.getItem("theme")
-      : window.matchMedia("(prefers-color-scheme: dark)").matches
-  );
 
   useEffect(() => {
     if (!localStorage.getItem("user")) {
@@ -20,20 +14,6 @@ export function Settings() {
       return;
     }
   }, []);
-
-  useEffect(() => {
-    if (darkMode === false || darkMode === "light") {
-      setDarkMode(false);
-      document.documentElement.classList.remove("dark");
-      document.documentElement.classList.add("light");
-      localStorage.setItem("theme", "light");
-    } else {
-      setDarkMode(true);
-      document.documentElement.classList.remove("light");
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    }
-  }, [darkMode]);
 
   return (
     <div className="min-h-screen bg-[#f5f5f5] dark:bg-[#20232B] pt-8">
@@ -45,7 +25,7 @@ export function Settings() {
 
       <div className="container px-4 mx-auto pt-20">
         <div className="flex flex-col gap-4">
-          <Button onClick={() => setDarkMode(!darkMode)}>
+          <Button onClick={() => props.onChangeDarkMode()}>
             <Moon size={22} />
             Dark Mode
           </Button>
