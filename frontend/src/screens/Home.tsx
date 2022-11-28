@@ -19,7 +19,7 @@ export const Home = () => {
     <div className="min-h-screen bg-[#f5f5f5] dark:bg-[#20232B]">
       <NavbarMobile onChangeFilterText={onChangeFilterText} />
 
-      <div className="container px-4 mx-auto mt-4">
+      <div className="container px-4 mx-auto pt-4 pb-24">
         {channels.length > 0 ? (
           <div className="flex flex-col gap-3">
             {channels

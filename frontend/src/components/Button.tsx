@@ -10,7 +10,7 @@ export function Button(props: ButtonProps) {
 
   return (
     <Component
-      className="bg-violet-500 text-white flex items-center gap-3 px-4 font-light text-lg w-full min-h-[60px] rounded-xl"
+      className="bg-violet-500 text-white flex items-center gap-3 px-4 font-light text-lg w-full min-h-[60px] rounded-xl [word-break: break-word]"
       {...props}
     />
   );
