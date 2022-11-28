@@ -7,7 +7,7 @@ export function MenuMobile() {
       <div className="container px-4 mx-auto">
         <div className="flex items-center justify-evenly py-4">
           <NavLink
-            to="/channels"
+            to="/home"
             className={({ isActive }) =>
               isActive
                 ? "bg-[#F2FB88] text-[#181920e0] p-3 rounded-2xl"

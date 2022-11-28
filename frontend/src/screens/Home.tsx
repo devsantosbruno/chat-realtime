@@ -7,7 +7,7 @@ import { Button } from "../components/Button";
 import { MenuMobile } from "../components/MenuMobile";
 import { NavbarMobile } from "../components/NavbarMobile";
 
-export const ChannelList = () => {
+export const Home = () => {
   const { channels } = useChannelContext();
   const [searchFilter, setSearchFilter] = useState("");
   const navigate = useNavigate();

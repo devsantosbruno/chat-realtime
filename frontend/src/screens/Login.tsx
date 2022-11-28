@@ -17,7 +17,7 @@ export const Login = () => {
 
   useEffect(() => {
     if (localStorage.getItem("user")) {
-      navigate("/channels");
+      navigate("/home");
     }
   }, []);
 
@@ -34,7 +34,7 @@ export const Login = () => {
               event.preventDefault();
               login(`${firstName} ${lastName}`);
               localStorage.setItem("user", `${firstName} ${lastName}`);
-              navigate("/channels");
+              navigate("/home");
             }}
           >
             <div className="flex flex-col gap-4">

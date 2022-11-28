@@ -4,8 +4,8 @@ import { useChannelContext } from "../hooks/useChannelContext";
 
 export function Participants() {
   const navigate = useNavigate();
-  const { channel } = useChannelContext();
-  const arrayUsers: any = [];
+  const { channel, userName } = useChannelContext();
+  const arrayUsers: Array<string> = [];
 
   return (
     <div className="min-h-screen bg-[#f5f5f5] dark:bg-[#20232B] pb-28">
@@ -27,20 +27,22 @@ export function Participants() {
             .filter((val) => {
               if (val.userName !== "") {
                 if (!arrayUsers.includes(val.userName)) {
-                  arrayUsers.push(val.userName);
                   return arrayUsers;
                 }
               }
             })
             .map((messagee) => {
               return (
-                <div>
-                  <div className="bg-[#6963DB] p-4 rounded-xl flex items-center gap-2">
-                    <User size={18} color="white" />
-                    <h3 className="text-white text-light">
-                      {messagee.userName}
-                    </h3>
-                  </div>
+                <div
+                  className="bg-[#6963DB] p-4 rounded-xl flex items-center gap-2"
+                  key={messagee.userName}
+                >
+                  <User size={18} color="white" className="flex-shrink-0" />
+                  <h3 className="text-white text-light">
+                    {messagee.userName === userName
+                      ? messagee.userName + "(Você)"
+                      : messagee.userName}
+                  </h3>
                 </div>
               );
             })}

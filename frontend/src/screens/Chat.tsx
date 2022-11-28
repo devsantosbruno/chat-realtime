@@ -19,7 +19,7 @@ export const Chat = () => {
     }
 
     if (!channelId) {
-      navigate("/channels");
+      navigate("/home");
       return;
     }
 

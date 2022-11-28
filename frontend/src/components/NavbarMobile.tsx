@@ -44,7 +44,7 @@ export function NavbarMobile(props: any) {
           <Accordion.Item value="item-1">
             <div className="grid grid-cols-2 items-center justify-evenly gap-6 mb-3">
               <NavLink
-                to="/channels"
+                to="/home"
                 className="px-4 py-2 mt-4 bg-white dark:bg-[#F2FB88] shadow text-[#121212] rounded-xl flex items-center justify-center gap-1"
               >
                 <ChatsCircle size={22} className="mr-2" />
