@@ -15,37 +15,45 @@ export function Participants() {
             <CaretLeft size={22} />
           </button>
 
-          <h5 className="bg-[#F2FB88] text-[#121212] px-8 py-2 rounded-full">
+          <h1 className="bg-[#F2FB88] text-[#121212] px-8 py-2 rounded-full">
             Participants
-          </h5>
+          </h1>
 
           <span className="w-[22px]"></span>
         </div>
 
         <div className="flex flex-col gap-4 pt-16">
-          {channel?.messages
-            .filter((val) => {
-              if (val.userName !== "") {
-                if (!arrayUsers.includes(val.userName)) {
-                  return arrayUsers;
+          {channel?.messages.length ? (
+            channel?.messages
+              .filter((val) => {
+                if (val.userName !== "") {
+                  if (!arrayUsers.includes(val.userName)) {
+                    return arrayUsers;
+                  }
                 }
-              }
-            })
-            .map((messagee) => {
-              return (
-                <div
-                  className="bg-[#6963DB] p-4 rounded-xl flex items-center gap-2"
-                  key={messagee.userName}
-                >
-                  <User size={18} color="white" className="flex-shrink-0" />
-                  <h3 className="text-white text-light">
-                    {messagee.userName === userName
-                      ? messagee.userName + "(Você)"
-                      : messagee.userName}
-                  </h3>
-                </div>
-              );
-            })}
+              })
+              .map((messagee) => {
+                return (
+                  <div
+                    className="bg-[#6963DB] p-4 rounded-xl flex items-center gap-2"
+                    key={messagee.userName}
+                  >
+                    <User size={18} color="white" className="flex-shrink-0" />
+                    <h3 className="text-white text-light">
+                      {messagee.userName === userName
+                        ? messagee.userName + "(Você)"
+                        : messagee.userName}
+                    </h3>
+                  </div>
+                );
+              })
+          ) : (
+            <div className="text-center">
+              <h2 className="text-2xl font-light">
+                there are no participants at the moment
+              </h2>
+            </div>
+          )}
         </div>
       </div>
     </div>
