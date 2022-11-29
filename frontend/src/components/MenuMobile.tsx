@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export function MenuMobile() {
   return (
-    <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-[#181920e0] rounded-t-3xl backdrop-blur-xl">
+    <div className="fixed bottom-0 left-0 right-0 bg-[#181920e0] rounded-t-3xl backdrop-blur-xl">
       <div className="container px-4 mx-auto">
         <div className="flex items-center justify-evenly py-4">
           <NavLink
