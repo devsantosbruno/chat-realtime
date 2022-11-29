@@ -23,6 +23,7 @@ $ npm run dev
 
 On other terminal:
 ```bash
+$ cd chat-realtime
 $ cd frontend
 $ npm install
 $ npm run dev
