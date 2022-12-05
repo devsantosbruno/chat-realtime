@@ -38,9 +38,7 @@ export const ChannelContextProvider = ({
   const [channel, setChannel] = useState<IChannel>();
 
   useEffect(() => {
-    socket.current = io(
-      "https://chat-realtime-server-devsantosbruno.vercel.app/"
-    );
+    socket.current = io("http://localhost:3333");
 
     socket.current.on("channels:get", (data) => {
       setChannels(data);

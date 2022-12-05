@@ -13,10 +13,10 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!localStorage.getItem("user")) {
-      navigate("/login");
-    } else {
+    if (localStorage.getItem("user")) {
       navigate("/home");
+    } else {
+      navigate("/login");
     }
   }, []);
 
@@ -46,16 +46,18 @@ function App() {
   }
 
   return (
-    <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/chat/:channelId" element={<Chat />} />
-      <Route path="/home" element={<Home />} />
-      <Route
-        path="/settings"
-        element={<Settings onChangeDarkMode={onChangeDarkMode} />}
-      />
-      <Route path="/participants" element={<Participants />} />
-    </Routes>
+    <div>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/chat/:channelId" element={<Chat />} />
+        <Route path="/home" element={<Home />} />
+        <Route
+          path="/settings"
+          element={<Settings onChangeDarkMode={onChangeDarkMode} />}
+        />
+        <Route path="/participants" element={<Participants />} />
+      </Routes>
+    </div>
   );
 }
 
